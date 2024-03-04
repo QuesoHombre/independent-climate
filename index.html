@@ -33,7 +33,7 @@
                 
             </div>
             <div class="info">
-                <div id="infoText" class="data">Since 1980, glaciers in Greenland have melted over 500,000 km<sup>2</sup><br><br>Refresh the page to see melt in real time!</div>  
+                <div id="infoText" class="data">Since 1980, glaciers in Greenland have melted over 500,000 km<sup>2</sup><br><br><b>Refresh the page to see melt in real time!</b></div>  
             </div>
         </div>
         <div class="image">
@@ -109,21 +109,21 @@
 
             if (MeltAreaM > 1000) {
                 console.log("use KM")
-                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: ${DifferenceRefreshMS/1000}s<br>
-                                                                        Area melted since last refresh : ${MeltAreaKM}Km<sup>2</sup>`;
+                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: <b>${DifferenceRefreshMS/1000}s</b><br>
+                                                                        Area melted since last refresh : <b>${MeltAreaKM}Km<sup>2</sup></b>`;
             } else if (MeltAreaCM > 100) {
                 console.log("use M")
-                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: ${DifferenceRefreshMS/1000}s<br>
-                                                                        Area melted since last refresh : ${MeltAreaM}m<sup>2</sup>`
+                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: <b>${DifferenceRefreshMS/1000}s</b><br>
+                                                                        Area melted since last refresh : <b>${MeltAreaM}m<sup>2</sup></b>`
 
             } else if (MeltAreaMM > 10) {
                 console.log("use CM")
-                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: ${DifferenceRefreshMS/1000}s<br>
-                                                                        Area melted since last refresh : ${MeltAreaCM}cm<sup>2</sup>`
+                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: <b>${DifferenceRefreshMS/1000}s</b><br>
+                                                                        Area melted since last refresh : <b>${MeltAreaCM}cm<sup>2</sup></b>`
             } else {
                 console.log("use MM")
-                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: ${DifferenceRefreshMS/1000}s<br>
-                                                                        Area melted since last refresh : ${MeltAreaMM}mm<sup>2</sup>`
+                document.getElementsByClassName("data")[0].innerHTML = `Time since last refresh: <b>${DifferenceRefreshMS/1000}s</b><br>
+                                                                        Area melted since last refresh : <b>${MeltAreaMM}mm<sup>2</sup></b>`
             }
         } else {
             console.log("neva been")
