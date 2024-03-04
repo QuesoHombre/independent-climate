@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Independent Climate Art Review</title>
+</head>
+
+<body>
+    <div class="titleInfoContainerImg">
+        <div class="titleInfoContainer">
+            <div class="title">
+                Greenland Ice Watch
+            </div>
+            <div class="info">
+                <div id="infoText">For my art review, I decided to tackle climate change as a representational issue. 
+                                   The problem with climate change representation is it is very difficult to portray 
+                                   scale. Climate change affects the world inversely, meaning those who create the most 
+                                   greenhouse emissions are generally affected the least which makes climate change a very 
+                                   unnuanced issue for those to blame. We see this in the changing environment of the Inuit 
+                                   people, who contribute almost nothing to the changing climate, yet face some of the greatest 
+                                   threats of disposition of anyone. Similarly, the Greenlandic landscape faces drastic climatological 
+                                   challenges, which in themselves are capable of providing devastating change.<br><br>
+                                   In the next 100 - 200 years, it is expected that the majority of glaciers in Greenland may recede 
+                                   completely. Considering Greenland is about 2.16 million km<sup>2</sup> in size (80% of that being glacier), 
+                                   the continent holds a very significant amount of the world's oceans in said in glaciers. The melting of 
+                                   these glaciers doesn't just mean the rising of sea levels, which by themselves would completely submerge 
+                                   almost all of Florida and several territories completely, but also would cause the earth to spin slower, 
+                                   causing days to be slightly longer on average. <br><br>The Polar Science Center, an origination that conducts 
+                                   basic and applied research on the oceanography, climatology, meteorology, biology, and ecology of the 
+                                   ice-covered regions on Earth, has been tracking the melting of Greenland glacial regions since 1980. This 
+                                   site is an interactive medium for viewing and interpreting said data and a helpful way to put into perspective 
+                                   what is happening to the climate of this region.
+                                   </div>
+                
+            </div>
+            <div class="info">
+                <div id="infoText" class="data">Since 1980, glaciers in Greenland have melted over 500,000 km<sup>2</sup><br><br>Refresh the page to see melt in real time!</div>  
+            </div>
+        </div>
+        <div class="image">
+            <img id="infoImg" src="tumblr_5af0f31ca3a8a73a1458ed44d9b0f252_f5e12f76_1280-removebg-preview.png">
+            <div class="refs">
+                <div>References:<br>
+                    <div style="text-indent: 25px; margin-bottom: 10px;">“Climate Change: Vital Signs of the Planet.” NASA, NASA, climate.nasa.gov/faq/30/if-all-of-earths-ice-melts-and-flows-into-the-ocean-what-would-happen-to-the-planets-rotation/</div>
+                    <div style="text-indent: 25px; margin-bottom: 10px;">“Climate Report.” Icelandic Meteorological Office, en.vedur.is/climatology/iceland/climate-report</div>
+                    <div style="text-indent: 25px;">“About.” Go to Polar Science Center., psc.apl.uw.edu/about/. </div>
+                </div>  
+            </div>
+        </div>
+    
+    </div>
+    <!-- <img class="backgroundImg" src="https://media02.stockfood.com/largepreviews/MjIxMTE3NTg0Mw==/71328253-Graphic-scene-of-rugged-snow-capped-mountains-and-a-wide-glacier-that-stretches-to-the-sea-Lilliehoeoekfjord.jpg"> -->
+
+        
+    <script>
+        // const cookies = document.cookie.split(";");
+
+        // for (let i = 0; i < cookies.length; i++) {
+        //     const cookie = cookies[i];
+        //     const eqPos = cookie.indexOf("=");
+        //     const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        // }
+
+        // document.cookie = new Date().getTime()
+        // document.getElementById("balls").innerHTML = document.cookie;\
+        // if (document.cookie != "") {
+        //     
+
+
+        //     document.cookie = TimeofRefresh.getTime();
+        // } else {
+        //     document.getElementById("balls").innerText = ""
+        // }
+        
+
+        // document.cookie = ""
+
+        console.log(`${typeof document.cookie}, ${document.cookie}`);
+        console.log(document.cookie != "");
+
+        const TimeofRefresh = new Date();
+        const TimeofLastRefresh = document.cookie;
+        const TimeofRefreshDifferenceMS = Math.abs(TimeofRefresh.getTime() - TimeofLastRefresh);    
+        
+        const meltM = 0.0049 * (TimeofRefreshDifferenceMS*10000000) * (1/86400000) * (1/365)
+
+        if (meltM < 0.01) {
+            console.log(`mm ${meltM}`);
+            document.getElementsByClassName("data")[0].innerHTML = `Last refresh: ${(TimeofRefreshDifferenceMS / 1000)}s ago<br>Ice Melt since last refresh: ${(meltM*10000).toFixed(3)}cm<sup>2</sup>`;
+        } else if (meltM < 0.1) {
+            console.log(`cm ${meltM}`);
+            document.getElementsByClassName("data")[0].innerHTML = `Last refresh: ${(TimeofRefreshDifferenceMS / 1000)}s ago<br>Ice Melt since last refresh: ${(meltM*100).toFixed(3)}cm<sup>2</sup>`;
+
+        } else {
+            console.log(`m ${meltM}`);
+            document.getElementsByClassName("data")[0].innerHTML = `Last refresh: ${(TimeofRefreshDifferenceMS / 1000)}s ago<br>Ice Melt since last refresh: ${meltM.toFixed(3)}m<sup>2</sup>`;
+
+        }
+
+        document.cookie = new Date().getTime()
+    </script>
+    <style>
+        div.titleInfoContainerImg {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        div.titleInfoContainer {
+            flex-direction: column;
+            /* width: 60%; */
+            margin-right: 5px;
+
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #0D1B1E;
+
+            
+        }
+
+        div.title {
+            border: 5px solid #7798AB;
+            border-radius: 10px;
+            
+            padding: 5px;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+            background-color: #C0CFD8;
+
+            webkit-filter: drop-shadow(3px 3px 3px #222);
+            filter: drop-shadow(3px 3px 5px #222);
+        }
+    
+        div.info {
+            border: 5px solid #7798AB;
+            border-radius: 10px;
+            background-color: #C0CFD8;
+
+            
+            padding: 5px;
+
+            display:flex;
+            flex: 1;
+            flex-direction: row;
+            flex-grow: 66;
+
+            margin-bottom: 5px;
+
+            webkit-filter: drop-shadow(3px 3px 3px #222);
+            filter: drop-shadow(3px 3px 5px #222);
+
+            /* width:100%; */
+        }
+
+        div.refs {
+            /* width: 40%; */
+            border: 5px solid #7798AB;
+            border-radius: 10px;
+            background-color: #C0CFD8;
+
+            padding: 5px;
+            word-wrap: break-word;
+
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #0D1B1E;
+
+            webkit-filter: drop-shadow(3px 3px 3px #222);
+            filter: drop-shadow(3px 3px 5px #222);
+        }
+
+        div.image {
+            width: 30%;
+            display: inline-block;
+        }
+
+        #infoImg {
+            border: 5px solid #7798AB;
+            border-radius: 10px;
+            
+            width: fit-contents;
+            padding: 5px;
+            /* max-width: 93%; */
+            max-width:calc(100% - 20px); height: auto;
+
+
+            background-color: #C0CFD8;
+
+            -webkit-filter: drop-shadow(3px 3px 3px #222);
+            filter: drop-shadow(3px 3px 5px #222);
+        }
+
+        .backgroundImg {
+            width: 100%;
+        }
+
+        html {
+            background-color: #7aa1c2; 
+            background-image: url("https://media02.stockfood.com/largepreviews/MjIxMTE3NTg0Mw==/71328253-Graphic-scene-of-rugged-snow-capped-mountains-and-a-wide-glacier-that-stretches-to-the-sea-Lilliehoeoekfjord.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            height: 100%;
+
+            /* box-shadow: 0 0 8px 8px white inset; */
+        }
+
+
+    </style>
+</body>
+
+</html>
