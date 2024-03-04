@@ -96,7 +96,7 @@
             CurrentRefreshMS = new Date().getTime();
             DifferenceRefreshMS = CurrentRefreshMS - LastRefreshMS;
             
-            const DifferenceRefreshYR = DifferenceRefreshMS / 31556952000;
+            const DifferenceRefreshYR = (DifferenceRefreshMS / 31556952000) * 100;
             const MeltAreaKM = (0.0049 * DifferenceRefreshYR).toFixed(4);
             const MeltAreaM  = ((0.0049 * 1000) * DifferenceRefreshYR).toFixed(4);
             const MeltAreaCM  = ((0.0049 * 1000*100) * DifferenceRefreshYR).toFixed(4);
